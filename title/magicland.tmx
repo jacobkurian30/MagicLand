@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.2" tiledversion="1.3.1" orientation="orthogonal" renderorder="right-down" compressionlevel="-1" width="42" height="60" tilewidth="16" tileheight="16" infinite="0" nextlayerid="16" nextobjectid="22">
+ <tileset firstgid="1" name="baseTile" tilewidth="16" tileheight="16" tilecount="1" columns="1">
+  <image source="Base Color.png" width="16" height="16"/>
+ </tileset>
+ <tileset firstgid="2" source="Dark Brown.tsx"/>
+ <tileset firstgid="3" source="Light Brown.tsx"/>
+ <tileset firstgid="4" source="Navy Blue.tsx"/>
+ <tileset firstgid="5" source="Dark Blue.tsx"/>
+ <layer id="1" name="Background" width="42" height="60">
+  <data encoding="base64" compression="zlib">
+   eJztw0ENAAAMA6Grf9N7zwMkrJqqqqqqqqqqqqr6HhLuCdk=
+  </data>
+ </layer>
+ <layer id="8" name="Magicland" width="42" height="60">
+  <data encoding="base64" compression="zlib">
+   eJztzsEJAAAIxLDD/Yd2CQWRBPpvwoY6mk+fPuc/AQAAAAAAAAD4qQF5cAHJ
+  </data>
+ </layer>
+ <objectgroup id="9" name="MagicLand">
+  <object id="19" x="33" y="31" width="607" height="95"/>
+  <object id="20" x="243.833" y="54.5" width="168.333" height="52.3333">
+   <text fontfamily="MS Shell Dlg 2" pixelsize="32" wrap="1" color="#55aaff">Magic Land</text>
+  </object>
+ </objectgroup>
+ <layer id="10" name="Asia" width="42" height="60">
+  <data encoding="base64" compression="zlib">
+   eJztzrEJAAAMw7AM/f/mPtEhBQm8OwGAHlOaT5+fPgEAAAAAAAC4sb1UAvk=
+  </data>
+ </layer>
+ <objectgroup id="12" name="Asia"/>
+ <layer id="11" name="Autralia" width="42" height="60">
+  <data encoding="base64" compression="zlib">
+   eJztzrEJAAAMw7As/f/l7r2gAQm8OwEAANrN03z6bPoEAAAAAAC4FmY0A7c=
+  </data>
+ </layer>
+ <objectgroup id="14" name="Australia"/>
+ <layer id="13" name="Player" width="42" height="60">
+  <data encoding="base64" compression="zlib">
+   eJztwTEBAAAAwqD1T+1vBqAAAAAAAAAAAACANydgAAE=
+  </data>
+ </layer>
+ <objectgroup id="15" name="Player">
+  <object id="21" x="424" y="804" width="89.3333" height="81.3333">
+   <ellipse/>
+  </object>
+ </objectgroup>
+</map>
