@@ -14,6 +14,7 @@ public abstract class Flight {
         position = new Vector3(x,y,0);
         velocity = new Vector3(0,0,0);
         flightTexture = new Texture(textureImage);
+        System.out.println("Image Height: " + flightTexture.getHeight());
     }
 
     public void update(int speed){

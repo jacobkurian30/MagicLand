@@ -1,16 +1,18 @@
 package com.mygdx.game;
 
-import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Game;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.mygdx.game.manager.MagicLandManager;
 
 public class MagicLand extends Game {
 	MagicLandManager magicLandManager;
+	public SpriteBatch spriteBatch;
+
 
 	@Override
 	public void create () {
-		magicLandManager = new MagicLandManager();
-		magicLandManager.create();
+		spriteBatch = new SpriteBatch();
+		setScreen(new MagicLandManager(this));
 	}
 
 	@Override
@@ -18,11 +20,9 @@ public class MagicLand extends Game {
 		super.render();
 	}
 
-	public void update(int speed){
-		magicLandManager.update(speed);
-	}
+
 	@Override
 	public void dispose () {
-		magicLandManager.dispose();
+	//	magicLandManager.dispose();
 	}
 }
