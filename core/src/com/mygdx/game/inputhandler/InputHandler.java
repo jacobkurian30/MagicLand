@@ -35,25 +35,42 @@ public class InputHandler {
         Gdx.input.setInputProcessor(stage);
         Table table = new Table();
         table.left().bottom();
-        final Image upImage = new Image(new Texture("downKey.png"));
+        table.setFillParent(true);
+
+        final Image upImage = new Image(new Texture("upButton.png"));
         upImage.setSize(100, 100);
         upImage.addListener(new InputListener(){
             @Override
             public boolean touchDown(InputEvent event, float x, float y, int pointer, int button) {
                 upPressed = true;
                 System.out.println("Uppressed " + upPressed);
-                return super.touchDown(event, x, y, pointer, button);
+                return true;
             }
 
             @Override
             public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
                 upPressed = false;
-                super.touchUp(event, x, y, pointer, button);
             }
         });
-        table.add("");
+
+
+        final Image downBtnImage = new Image(new Texture("downButton.png"));
+        downBtnImage.setSize(100, 100);
+        downBtnImage.addListener(new InputListener(){
+            @Override
+            public boolean touchDown(InputEvent event, float x, float y, int pointer, int button) {
+                downPressed = true;
+                System.out.println("Uppressed " + upPressed);
+                return true;
+            }
+
+            @Override
+            public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
+                downPressed = false;
+            }
+        });
         table.add(upImage);
-        table.add();
+        table.add(downBtnImage);
         table.setDebug(true);
 
         stage.addActor(table);
@@ -68,23 +85,22 @@ public class InputHandler {
 
 
     public void verticalMovement(float dt, float speed){
-        this.flight.getVelocity().add(0, speed/20, 0);
-        this.flight.getPosition().add(0, this.flight.getVelocity().y , 0);
-        System.out.println(this.flight.getVelocity().y);
+      //  this.flight.getVelocity().add(0, speed/20, 0);
+        this.flight.getPosition().add(0, speed , 0);
+      //  System.out.println(this.flight.getVelocity().y);
     }
 
-    public Texture getKeyTexture() {
-        return keyTexture;
-    }
-    public Vector3 getPosition() {
-        return position;
-    }
 
     public void update(float delta, int speed){
-        if(Gdx.input.isTouched()){
+        if(upPressed){
+            System.out.println("Up" + upPressed);
             verticalMovement(delta, speed);
         } else {
             this.flight.getVelocity().set(0,0,0);
+        }
+        if(downPressed){
+            System.out.println("down " + downPressed);
+            verticalMovement(delta, -speed);
         }
     }
 

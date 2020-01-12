@@ -26,12 +26,14 @@ public class MagicLandManager implements Screen {
     private InputHandler inputHandler;
     private MagicLand magicLand;
     private HudManager hudManager;
+   // private HudTwo hudTwo;
     private OrthographicCamera gameCam;
     private Viewport viewPort;
 
     public MagicLandManager(MagicLand magicLand) {
         this.magicLand = magicLand;
         hudManager = new HudManager(magicLand.spriteBatch);
+ //       hudTwo = new HudTwo(magicLand.spriteBatch);
         gameCam = new OrthographicCamera();
         viewPort = new FitViewport(Constants.WIDTH, Constants.HEIGHT, gameCam);
         create();
@@ -60,7 +62,7 @@ public class MagicLandManager implements Screen {
 
         magicLand.spriteBatch.end(); //Close batch
         inputHandler.draw();
-
+        inputHandler.update(delta, Constants.STANDARD_SPEED);
         hudManager.stage.draw();
 
         update(Constants.STANDARD_SPEED);
@@ -129,7 +131,6 @@ public class MagicLandManager implements Screen {
             attackerFlight.getFlightTexture().dispose();
             attackerFlights.remove(attackerFlight);
         }
-        //System.out.println(attackerFlights.size());
     }
 
 }
